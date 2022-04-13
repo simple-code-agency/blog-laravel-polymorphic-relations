@@ -1,3 +1,28 @@
+# Simple Code Agency
+Working example of polymorphic relations.
+Dummy project where the user has the ability to like the items from the list.
+
+List liked items in the user profile. 
+Show the amount of likes for each item.
+
+### Commands used during development
+1. `php artisan make:migration add_likeables_table`
+2. `php artisan make:migration create_books_table`
+3. `php artisan make:migration create_items_table`
+4. `php artisan make:migration create_sweets_table`
+6. `php artisan make:model Book`
+7. `php artisan make:model Sweet`
+8. `php artisan make:model Item`
+9. `php artisan make:model Likeable`
+10. `php artisan make:factory Book`
+11. `php artisan make:factory Item`
+12. `php artisan make:factory Sweet`
+13. `php artisan make:seeder UserSeeder`
+14. `php artisan make:seeder BookSeeder`
+15. `php artisan make:seeder ItemSeeder`
+16. `php artisan make:seeder SweetSeeder`
+17. `php artisan migrate:fresh --seed`
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
