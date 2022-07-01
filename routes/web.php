@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sweets', [\App\Http\Controllers\SweetController::class, 'index']);
+Route::get('/sweets', [\App\Http\Controllers\SweetController::class, 'index'])->name('sweets');
+Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index'])->name('items');
+Route::get('/books', [\App\Http\Controllers\BookController::class, 'index'])->name('books');

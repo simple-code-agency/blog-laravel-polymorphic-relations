@@ -36,21 +36,22 @@
                         <div class="ml-12">
                             <h1 class="text-gray-600">Sweets</h1>
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                <p>List of </p>
+                                <p>All the sweets from the database.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 p-6 ml-12">
                         @foreach($sweets as $sweet)
-                            <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                                <h3 class="ml-4 text-sm text-gray-500 sm:ml-0">Likes {{ $sweet->likes_count }}</h3>
+                            <article>
+                                <h3 class="ml-4 text-gray-500 sm:ml-0">Name: {{ $sweet->name }}</h3>
                                 <div class="ml-4 text-sm text-gray-500 sm:ml-0">
-                                    <p>Name: {{ $sweet->name }}</p>
+                                    <p><strong>Likes: {{ $sweet->likes_count }}</strong></p>
                                     <p>Weight: {{ $sweet->weight }}</p>
                                     <p>Price: {{ $sweet->price }}</p>
                                     <br>
                                 </div>
-                            </div>
+                            </article>
                         @endforeach
                     </div>
                 </div>
