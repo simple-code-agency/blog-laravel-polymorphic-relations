@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Book;
 use App\Models\Item;
@@ -27,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Login user with id 1 automatically
+        $user = User::all()->random();
+        Auth::login($user);
+
         Relation::enforceMorphMap([
             'book' => Book::class,
             'item' => Item::class,

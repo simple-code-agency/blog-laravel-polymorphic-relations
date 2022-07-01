@@ -43,6 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // All likes of this user
     public function likes(): HasMany
     {
         return $this->hasMany(Likeable::class);

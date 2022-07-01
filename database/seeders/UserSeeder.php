@@ -6,7 +6,6 @@ use App\Models\Book;
 use App\Models\Item;
 use App\Models\Sweet;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder

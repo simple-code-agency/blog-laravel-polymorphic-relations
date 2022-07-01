@@ -35,13 +35,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">
+                                <div class="ml-auto">
+                                </div>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
+                                    {{-- How many item user liked --}}
+                                    <h3 class="text-gray-300">User liked {{ auth()->user()->likes->count() }} items in total</h3>
+
                                     <a href="{{ route('items') }}" class="underline text-gray-900 dark:text-white">Items</a>
+
                                     <br>
                                     <br>
+
                                     <a href="{{ route('books') }}" class="underline text-gray-900 dark:text-white">Books</a>
+
                                     <br>
                                     <br>
+
                                     <a href="{{ route('sweets') }}" class="underline text-gray-900 dark:text-white">Sweets</a>
                                 </div>
                             </div>
