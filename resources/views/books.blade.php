@@ -424,10 +424,24 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 p-6 ml-12">
+                <h3 class="text-gray-300">Hello {{ auth()->user()->name }} with ID {{ auth()->user()->id }}</h3>
+                <br>
                 @foreach($books as $book)
                     <article>
                         <h3 class="ml-4 text-gray-500 sm:ml-0">Title: {{ $book->title }}</h3>
                         <div class="ml-4 text-sm text-gray-500 sm:ml-0">
+                            <form action="{{ route('like', ['model_type' => \App\Models\Book::class, 'model_id' => $book->id]) }}" method="POST">
+                                @csrf
+
+                                <button type="submit" class="bg-gray-200 text-gray-600 hover:bg-gray-300 px-4 py-2 rounded-full">
+                                    @if(auth()->user()->likes()->where('likeable_id', $book->id)->where('likeable_type', 'book')->first())
+                                        liked
+                                    @else
+                                        like
+                                    @endif
+                                </button>
+                            </form>
+
                             <p><strong>Likes: {{ $book->likes_count }}</strong></p>
                             <p>Author: {{ $book->author }}</p>
                             <p>ISBN: {{ $book->isbn }}</p>

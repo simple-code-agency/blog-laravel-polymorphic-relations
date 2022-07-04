@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Login user with id 1 automatically
+        // Login random user automatically
         $user = User::all()->random();
         Auth::login($user);
 

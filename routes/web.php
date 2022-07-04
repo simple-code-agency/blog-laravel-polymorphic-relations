@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\SweetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sweets', [\App\Http\Controllers\SweetController::class, 'index'])->name('sweets');
-Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index'])->name('items');
-Route::get('/books', [\App\Http\Controllers\BookController::class, 'index'])->name('books');
+Route::get('/sweets', [SweetController::class, 'index'])->name('sweets');
+Route::get('/items', [ItemController::class, 'index'])->name('items');
+Route::get('/books', [BookController::class, 'index'])->name('books');
+
+Route::post('/likeable', [LikeController::class, 'store'])->name('like');

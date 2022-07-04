@@ -38,6 +38,7 @@
                                 <div class="ml-auto">
                                 </div>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
+                                    <h3 class="text-gray-300">Hello {{ auth()->user()->name }} with ID {{ auth()->user()->id }}</h3>
                                     {{-- How many item user liked --}}
                                     <h3 class="text-gray-300">User liked {{ auth()->user()->likes->count() }} items in total</h3>
 
